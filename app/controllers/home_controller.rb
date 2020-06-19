@@ -26,7 +26,10 @@ class HomeController < ApplicationController
       {
         name: "Johannesburg",
         value: 'jhb',
-        quotes: [generate_quote("you can buy castle lites", "but can't drink them with mates")]
+        quotes: [
+          generate_quote("you can buy castle lites", "but can't drink them with mates"),
+          "dis fokken koud ❄️"
+        ]
       },
       {
         name: 'Cape Town',

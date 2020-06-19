@@ -1,13 +1,16 @@
 section.hero.is-primary.is-fullheight
   .hero-body data={ controller: 'home', 'home-quote-path': home_quote_path }
-    .container
+    .container data={ controller: 'notification' }
       .title.level
         .level-left
-          span #{@time_of_day.titleize} in
-          span.select.is-medium.ml-2.is-vcentered
+          span.mr-2 #{@time_of_day.titleize} in
+          span.select.is-medium.is-vcentered.mt-2
             = select_tag(:location, options_for_select(@locations, selected: @location), class: 'select', data: { target: 'home.location' }, onclick: "gtag('event', 'change', { 'event_category': 'location', 'event_label': 'location drop down' } )")
       .subtitle.mt-0 data={ target: 'home.output' }
         = @quote
       .level.level-left.is-flex
-        .button.is-rounded onclick="gtag('event', 'click', { 'event_category': 'heart', 'event_label': 'home page like' } )'; window.alert('Thank you. Your feedback has been received :D');"
-          => inline_svg_pack_tag('media/images/heart.svg', style: 'height: 22px')
+        .button.is-rounded data={ action: 'click->notification#show' } onclick="gtag('event', 'click', { 'event_category': 'heart', 'event_label': 'home page like' } );"
+          = inline_svg_pack_tag('media/images/heart.svg', style: 'height: 22px')
+      .notification.is-primary.is-light.is-hidden data={ target: 'notification.content' }
+        button.delete data={ action: 'click->notification#hide' }
+        | Thanks for the feedback!
