@@ -1,6 +1,8 @@
 section.hero.is-primary.is-fullheight
-  .hero-body
+  .hero-body data={ controller: 'home' }
+    .is-hidden data={ target: 'home.hash' } = @quotes.to_json
     .container
-      .title #{@time_of_day.titleize} in Johannesburg,
-      .subtitle
-        | you can buy castle lites 🥳, but can't drink them with mates 😑
+      .title
+        span #{@time_of_day.titleize} in&nbsp
+        span.select.is-medium = select_tag(:location, options_for_select(@locations), class: 'select is-medium', data: { target: 'home.location' })
+      .subtitle data={ target: 'home.output' }
