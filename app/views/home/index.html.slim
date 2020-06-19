@@ -1,8 +1,9 @@
 section.hero.is-primary.is-fullheight
   .hero-body data={ controller: 'home', 'home-quote-path': home_quote_path }
     .container
-      .title
-        span #{@time_of_day.titleize} in&nbsp
-        span.select.is-medium = select_tag(:location, options_for_select(@locations, selected: @location), class: 'select', data: { target: 'home.location' })
+      .title.level
+        .level-left
+          span #{@time_of_day.titleize} in
+          span.select.is-medium.ml-2.is-vcentered = select_tag(:location, options_for_select(@locations, selected: @location), class: 'select', data: { target: 'home.location' })
       .subtitle.mt-0 data={ target: 'home.output' }
         = @quote
