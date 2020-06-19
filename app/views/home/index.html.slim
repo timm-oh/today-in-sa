@@ -9,5 +9,5 @@ section.hero.is-primary.is-fullheight
       .subtitle.mt-0 data={ target: 'home.output' }
         = @quote
       .level.level-left.is-flex
-        .button.is-rounded onclick="gtag('event', 'click', { 'event_category': 'heart', 'event_label': 'home page like' } )'; alert('Thank you. Your feedback has been received :D');"
+        .button.is-rounded onclick="gtag('event', 'click', { 'event_category': 'heart', 'event_label': 'home page like' } )'; window.alert('Thank you. Your feedback has been received :D');"
           => inline_svg_pack_tag('media/images/heart.svg', style: 'height: 22px')
