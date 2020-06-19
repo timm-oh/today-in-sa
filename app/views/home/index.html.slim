@@ -1,5 +1,7 @@
 section.hero.is-primary.is-fullheight
   .hero-body
     .container
-      .title Today in Johannesburg,
-      .subtitle its bloody cold
+      .title #{@time_of_day.titleize} in Johannesburg,
+      .subtitle
+        => "you can buy castle lites 🥳,"
+        = "but can't drink them with mates 😑"
