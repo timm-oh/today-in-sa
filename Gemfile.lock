@@ -79,6 +79,9 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
+    inline_svg (1.7.1)
+      activesupport (>= 3.0)
+      nokogiri (>= 1.6)
     loofah (2.6.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -190,6 +193,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   capybara (>= 2.15)
+  inline_svg (~> 1.7)
   pg (>= 0.18, < 2.0)
   pry
   puma (~> 4.1)

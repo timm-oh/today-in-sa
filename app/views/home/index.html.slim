@@ -8,5 +8,8 @@ section.hero.is-primary.is-fullheight
             = select_tag(:location, options_for_select(@locations, selected: @location), class: 'select', data: { target: 'home.location' }, onclick: "gtag('event', 'change', { 'event_category': 'location', 'event_label': 'location drop down' } )")
       .subtitle.mt-0 data={ target: 'home.output' }
         = @quote
-      .button.is-rounded onclick="gtag('event', 'click', { 'event_category': 'heart', 'event_label': 'home page like' } )"
-        | <3
+      .container.level
+        .level-left
+          .button.is-rounded onclick="gtag('event', 'click', { 'event_category': 'heart', 'event_label': 'home page like' } )"
+            => inline_svg_pack_tag('media/images/heart.svg', style: 'height: 22px')
+          span.ml-3 <--- if you like where this is going
