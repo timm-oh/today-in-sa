@@ -4,8 +4,9 @@ section.hero.is-primary.is-fullheight
       .title.level
         .level-left
           span #{@time_of_day.titleize} in
-          span.select.is-medium.ml-2.is-vcentered = select_tag(:location, options_for_select(@locations, selected: @location), class: 'select', data: { target: 'home.location' })
+          span.select.is-medium.ml-2.is-vcentered
+            = select_tag(:location, options_for_select(@locations, selected: @location), class: 'select', data: { target: 'home.location' }, onclick: "gtag('event', 'change', { 'event_category': 'location', 'event_label': 'location drop down' } )")
       .subtitle.mt-0 data={ target: 'home.output' }
         = @quote
-      .button.is-rounded onclick="ga('send', 'event', 'button', 'click', 'home-page-like', 1);"
+      .button.is-rounded onclick="gtag('event', 'click', { 'event_category': 'heart', 'event_label': 'home page like' } )"
         | <3
