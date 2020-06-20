@@ -13,10 +13,6 @@ class HomeController < ApplicationController
 
   private
 
-  def generate_quote(positive, not_so_positive)
-    "#{positive} 🥳, #{not_so_positive} 😑"
-  end
-
   def find_location(location)
     locations.find { |h| h[:value] == location }
   end
@@ -27,19 +23,24 @@ class HomeController < ApplicationController
         name: "Johannesburg",
         value: 'jhb',
         quotes: [
-          generate_quote("you can buy castle lites", "but can't drink them with mates"),
-          "dis fokken koud ❄️"
+          "you can buy castle lites 🥳 but can't drink them with mates 😑",
+          "dis fokken koud ❄️",
+          "your food won't defrost 😂"
         ]
       },
       {
         name: 'Cape Town',
         value: 'cpt',
-        quotes: [generate_quote("you can take a jog on the promenade", "but can't buy gwaais")]
+        quotes: [
+          "you can take a jog on the promenade 🥳 but can't buy gwaais 😑"
+        ]
       },
       {
         name: 'Durban',
         value: 'dbn',
-        quotes: [generate_quote("you can walk on the beach", "but you can't swim in the sea")]
+        quotes: [
+          "you can walk on the beach 🥳 but you can't swim in the sea 😑"
+        ]
       }
     ]
   end
